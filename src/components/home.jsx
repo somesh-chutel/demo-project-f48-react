@@ -1,6 +1,7 @@
 
 import { useEffect, useState } from 'react';
 import '../App.css';
+import DisplayUsers from './homeComp/displayUsers';
 
 // gorest_2dOilVgSwFC29hDQDuzzdTcozcMonhkIjnkfduc1B6E2PkbzN
 
@@ -65,17 +66,7 @@ const Home = () => {
                 (
                     <ul className='w-50 p-3 flex-column'>
                         {
-                            allValues.users.map( each => (
-                                <li style={{margin : "15pxs"}} key={each.id} className='w-100 align-items-center mb-3 shadow'>
-                                    <div className='my-profile'>
-                                        <h1>{each.name[0]}</h1>
-                                    </div>
-                                    <div>
-                                        <h2>{each.name}</h2>
-                                        <p>Email : <span className='text-danger'>{each.email}</span></p>
-                                    </div>
-                                </li>
-                            ))
+                            allValues.users.map( each => <DisplayUsers each = {each}/>)
                         }
                     </ul>
                 )
